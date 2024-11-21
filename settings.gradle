@@ -1,0 +1,11 @@
+rootProject.name = 'be'
+include 'domain', 'models', 'application'
+findProject(":models")?.name = 'models'
+findProject(":domain")?.name = 'domain'
+findProject(":application")?.name = 'application'
+include 'adapter'
+include 'adapter:web'
+findProject(':adapter:web')?.name = 'web'
+include 'adapter:repository'
+findProject(':adapter:repository')?.name = 'repository'
+

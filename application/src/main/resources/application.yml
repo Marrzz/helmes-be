@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        same-site: lax
+        secure: true
+        http-only: true
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST}
+      password: ${REDIS_PASSWORD}
+      port: ${REDIS_PORT}
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    url: ${LIQUIBASE_URL}
+    user: ${LIQUIBASE_USERNAME}
+    password: ${LIQUIBASE_USERNAME}
+    default-schema: ${LIQUIBASE_SCHEMA}
+  datasource.hikari:
+    maximum-pool-size: ${MAX_CONNECTIONS}
+    minimum-idle: ${MIN_IDLE_CONNECTIONS}
+    idle-timeout: ${IDLE_TIMEOUT}
+    max-lifetime: ${MAX_LIFETIME}
+    connection-timeout: ${CONNECTION_TIMEOUT}
+  session:
+    store-type: redis
+    redis:
+      namespace: session
+  application:
+    name: be
+  profiles:
+    active: ${ACTIVE_PROFILE:}
+
+springdoc:
+  api-docs:
+    enabled: false
