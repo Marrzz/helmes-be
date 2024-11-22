@@ -30,13 +30,13 @@ public class TestFixtures {
 
     public static final SaveUserSectorsRequestV1 VALID_UPDATE_REQUEST = SaveUserSectorsRequestV1.builder()
             .name("Stiiven Siigal")
-            .hasAgreedToTerms(false)
+            .hasAgreedToTerms(true)
             .selectedSectors(List.of(2L)) // Selected 'Other'
             .build();
 
     public static final GetPersonSectorsResponseV1 VALID_UPDATE_RESPONSE = GetPersonSectorsResponseV1.builder()
             .name("Stiiven Siigal")
-            .hasAgreedToTerms(false)
+            .hasAgreedToTerms(true)
             .sectors(List.of(new PersonSector(2, "Other"))) // Selected 'Manufacturing'
             .build();
 
