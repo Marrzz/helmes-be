@@ -26,12 +26,4 @@ public class SessionController {
 
         return ResponseEntity.ok().build();
     }
-
-    @DeleteMapping
-    public ResponseEntity<Object> endSession(HttpSession session) {
-        session.invalidate();
-
-        log.atInfo().log("Session with personId {} invalidated", session.getId());
-        return ResponseEntity.noContent().build();
-    }
 }
